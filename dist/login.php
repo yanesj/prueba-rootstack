@@ -9,6 +9,7 @@ if (isset($_POST['login'])) {
     include('../clases/auth.php');
     $user = new auth();//Se instancia el objeto de la clase auth
     $resp= $user->login($_POST['email'],$_POST['password']); //Se accede al metodo login
+ 
     if ($resp[0]['code_response']=='00') {
         $_SESSION['user_authorized']=true;
         $_SESSION['nombre']=$resp[0]['name'];

@@ -15,6 +15,11 @@
 
            //Se recibe la URL por parámetro
            $url = file_get_contents($url);
+
+           
+
+
+         
            //creamos nuevo DOMDocument y cargamos la url
            $dom = new \DOMDocument();
            @$dom->loadHTML($url);

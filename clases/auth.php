@@ -9,13 +9,11 @@ class auth
 
     public function login($email, $pass)//función para autenticar a un usuario
     {
-        include('../params/params.php');
-        $this->bd= new conexion($server, $user, $password, $db, $port);
-        $link=$this->bd->conectar();
+  
         $pwd=md5($pass);//password cirado en md5
         $query = "SELECT name,last_name FROM users WHERE email = '$email' AND PASSWORD = '$pwd' "; //consulta hacia la BD
-        $row= $this->consultar($link, $query);
-        $this->bd->desconectar();
+        $row= $this->consultar($query);
+  
         return $row;
     }
 
@@ -24,6 +22,7 @@ class auth
         include('../params/params.php');
         $this->bd= new conexion($server, $user, $password, $db, $port);
         $link=$this->bd->conectar();
+
 
         $resultado = $link->query($query);
         if ($resultado) {

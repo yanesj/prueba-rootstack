@@ -102,9 +102,8 @@ if(!isset($_SESSION['user_authorized'])) header("Location: loginAdmin.php");
           {
             r=JSON.parse(msg);
             $.each(r, function(item){
-              var link ='';
-              link = r[item].searchlink.split('/');
-              link= "'"+link[1]+"'";
+              
+              link= "'"+r[item].searchlink+"'";
             $("#contentTable").append('<tr><td>'+r[item].id_categoria+'</td><td>'+r[item].descripcion+'</td><td><a style="color:blue;cursor:pointer" onclick="getAnuncios('+link+')">Ver Anuncios</a></td></tr>');
             });
             jQuery('#dataTable').DataTable({
