@@ -206,10 +206,9 @@ if(!isset($_SESSION['user_authorized'])) header("Location: loginAdmin.php");
 
       $(document).ready(function(){
         $("#scrap").click(function(){//Elescucha del botón que llena la base de datos
-          webScrap();//llamado a la función webScrap
+            webScrap();//llamado a la función webScrap
         
         });
-       // getCategories();
 
 
       });
