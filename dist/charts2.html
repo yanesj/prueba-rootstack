@@ -1,0 +1,73 @@
+<!--https://code.tutsplus.com/es/tutorials/getting-started-with-chartjs-line-and-bar-charts--cms-28384-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="uniminuto-tableroControl2A" content="um">
+  </head>
+  <body>
+    <div style="display: block;width: 500px !important;height: 180px !important;">
+      <canvas id="densityChart" width="600" height="400"></canvas>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script id="rendered-js">
+      var densityCanvas = document.getElementById("densityChart");
+      Chart.defaults.global.defaultFontFamily = "Lato";
+      Chart.defaults.global.defaultFontSize = 12;
+
+      var densityData = {
+        label: 'Porcentaje de uso por: salones, rectorias y otros',
+        data: [20, 33, 65, 62, 79, 88, 80, 84, 64, 58, 18, 5],
+        backgroundColor: [
+        'rgba(0, 99, 132, 0.6)',
+        'rgba(30, 99, 132, 0.6)',
+        'rgba(60, 99, 132, 0.6)',
+        'rgba(90, 99, 132, 0.6)',
+        'rgba(120, 99, 132, 0.6)',
+        'rgba(150, 99, 132, 0.6)',
+        'rgba(180, 99, 132, 0.6)',
+        'rgba(210, 99, 132, 0.6)',
+        'rgba(240, 99, 132, 0.6)',
+        'rgba(270, 99, 132, 0.6)',
+        'rgba(300, 99, 132, 0.6)',
+        'rgba(330, 99, 132, 0.6)'
+      ],
+
+      borderColor: [
+        'rgba(0, 99, 132, 1)',
+        'rgba(30, 99, 132, 1)',
+        'rgba(60, 99, 132, 1)',
+        'rgba(90, 99, 132, 1)',
+        'rgba(120, 99, 132, 1)',
+        'rgba(150, 99, 132, 1)',
+        'rgba(180, 99, 132, 1)',
+        'rgba(210, 99, 132, 1)',
+        'rgba(240, 99, 132, 1)',
+        'rgba(270, 99, 132, 1)',
+        'rgba(300, 99, 132, 1)',
+        'rgba(330, 99, 132, 1)'
+      ],
+
+      borderWidth: 2,
+      hoverBorderWidth: 0 };
+
+      var chartOptions = {
+        scales: {
+          yAxes: [{
+            barPercentage: 0.5 }] },
+
+      elements: {
+        rectangle: {
+          borderSkipped: 'left' } } };
+
+      var barChart = new Chart(densityCanvas, {
+        type: 'horizontalBar',
+        data: {
+          labels: ["Ene", "Feb", "Mar", "Abril", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
+          datasets: [densityData]
+        },
+
+        options: chartOptions
+      });
+      //# sourceURL=pen.js
+    </script> 
+</body></html>
